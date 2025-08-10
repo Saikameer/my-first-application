@@ -1,0 +1,277 @@
+/* Global dark theme */
+body, html, #root, .App {
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
+
+/* Tabs navigation */
+.tabs {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  border-bottom: 2px solid #333;
+  background-color: #181818;
+}
+
+.tab {
+  background: none;
+  border: none;
+  color: #bbb;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-bottom: 3px solid transparent;
+  transition: color 0.3s, border-bottom-color 0.3s;
+}
+
+.tab:hover {
+  color: #fff;
+}
+
+.tab.active {
+  color: #1db954;
+  border-bottom-color: #1db954;
+}
+
+/* Movie grid */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Movie card */
+.movie-card {
+  background-color: #222;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.card-overlay {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  z-index: 2;
+}
+
+.watchlist-button {
+  background-color: rgba(0,0,0,0.6);
+  border: none;
+  color: #1db954;
+  font-size: 1rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.watchlist-button:hover {
+  background-color: #1db954;
+  color: #000;
+}
+
+.movie-info {
+  padding: 10px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.rating {
+  color: #f5c518;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.star {
+  font-size: 1.2rem;
+}
+
+.movie-info h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.trailer-button {
+  background-color: #1db954;
+  border: none;
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background-color 0.3s;
+}
+
+.trailer-button:hover {
+  background-color: #17a44d;
+}
+
+/* Modal styles */
+.modal {
+  background-color: #181818;
+  color: #fff;
+  max-width: 90vw;
+  max-height: 80vh;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 8px;
+  outline: none;
+  position: relative;
+  overflow-y: auto;
+}
+
+.overlay {
+  background-color: rgba(0,0,0,0.75);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modal-content img {
+  width: 150px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  float: left;
+  margin-right: 20px;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.modal-content label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+.modal-content button {
+  background-color: #1db954;
+  border: none;
+  color: #000;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+  background-color: #17a44d;
+}
+
+/* Comments section */
+.comments-section {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.add-comment textarea {
+  width: 100%;
+  height: 60px;
+  padding: 8px;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid #444;
+  background-color: #222;
+  color: #fff;
+  resize: vertical;
+}
+
+.add-comment button {
+  padding: 6px 12px;
+  cursor: pointer;
+  background-color: #1db954;
+  border: none;
+  color: #000;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.comments-list .comment {
+  border-top: 1px solid #444;
+  padding: 10px 0;
+}
+
+.comments-list .comment p {
+  margin: 5px 0;
+}
+
+.comments-list .comment button {
+  margin-right: 10px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #1db954;
+  font-weight: bold;
+}
+
+.reply-section textarea {
+  width: 100%;
+  height: 50px;
+  padding: 6px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid #444;
+  background-color: #222;
+  color: #fff;
+  resize: vertical;
+}
+
+.reply-section button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #1db954;
+  border: none;
+  color: #000;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.replies {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.reply {
+  border-left: 2px solid #555;
+  padding-left: 10px;
+  margin-bottom: 5px;
+  font-size: 0.9em;
+  color: #bbb;
+}
